@@ -16,7 +16,7 @@
 # Ignore pictures
 /js/gallery-dist.js
 /js/gallery-inner-dist.js
-/pict
+/app/assets/images/pict
 
 #Ignore database settings
 config/database.yml

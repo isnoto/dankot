@@ -7,7 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="page-wrap">
   <header class="main-header">
     <nav class="navigation-menu">
@@ -38,5 +37,6 @@
   </div>
 </footer>
 
+<%= yield :javascript_includes %>
 </body>
 </html>
