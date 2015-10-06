@@ -201,11 +201,8 @@ Gallery.prototype.masonry = function() {
     itemSelector: '.grid__item',
     columnWidth: 300
   });
-
-
+  
 };
-
-g()
 
 var gallery = new Gallery({elem: document.getElementById("gallery-inner")});
 
