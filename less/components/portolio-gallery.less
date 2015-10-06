@@ -1,0 +1,81 @@
+.grid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__item {
+    display: none;
+    width: 300px;
+    margin-bottom: 20px;
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+    -webkit-animation: moveUp 0.65s ease forwards;
+    animation: moveUp 0.65s ease forwards;
+    cursor: pointer;
+    transition: hover 800ms;
+
+    &:hover:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      content: '';
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, .5) url('../img/zoom.png') no-repeat 50% 50%;
+      z-index: 1000;
+      -webkit-animation-duration: 0.7s;
+      animation-duration: 0.7s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+    }
+
+    & img {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      z-index: 2;
+
+    }
+  }
+}
+
+@-webkit-keyframes moveUp {
+  0% { }
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1; }
+}
+
+@keyframes moveUp {
+  0% { }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .5;
+  }
+}
+
+

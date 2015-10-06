@@ -1,0 +1,27 @@
+.center-wrapper(@width: 960px) {
+  width: @width;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.clear-fix() {
+  .clear-fix:before,
+  .clear-fix:after {
+    content: '';
+    display: table;
+  }
+  .clear-fix:after {
+    clear: both;
+  }
+}
+
+.fix-footer(@width: 10px) {
+  .page-wrap {
+    min-height: 100%;
+  }
+
+  .push {
+    height: @width;
+    clear: both;
+  }
+}

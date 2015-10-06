@@ -1,0 +1,40 @@
+.navigation-menu {
+  padding: 15px 0;
+  padding-bottom: 11px;
+  background-color: @navBg;
+
+  &--inner-pages {
+    float: right;
+  }
+
+  &__list {
+    font-size: 0;
+    text-align: center;
+
+    &--to-right {
+      float: right;
+      text-align: left;
+    }
+  }
+  
+  &__item {
+    display: inline-block;
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & a {
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

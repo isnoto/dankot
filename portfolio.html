@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Kot</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+  <script src="js/masonry.js"></script>
+
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="main-header main-header--inner-pages">
+      <nav class="navigation-menu">
+        <div class="center-wrap clear-fix">
+          <a href="index.html" class="logo">
+            <span class="logo__name">Kotuk Bogdan — <i class="logo__name--italic">фотограф</i></span>
+          </a>
+          <ul class="navigation-menu__list navigation-menu__list--to-right">
+            <li class="navigation-menu__item"><a href="portfolio.html">Портфолио</a></li>
+            <li class="navigation-menu__item"><a href="price.html">Цены</a></li>
+            <li class="navigation-menu__item"><a href="aboutme.html">Обо мне</a></li>
+            <li class="navigation-menu__item"><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="gallery-portfolio" id="gallery-inner">
+      <div class="sort-photos">
+
+        <div class="center-wrap clear-fix">
+          <span class="sort-photos__bracket sort-photos__bracket--left">[</span>
+          <span class="sort-photos__bracket sort-photos__bracket--right">]</span>
+
+          <ul class="sort-photos__list">
+            <li class="sort-photos__item sort-photos__item--active" data-action="sort" data-sort="all" ><a class="sort-photos__link" href="">Все</a></li>
+            <li class="sort-photos__item" data-action="sort" data-sort="wedding"><a class="sort-photos__link" href="">Свадьба</a></li>
+            <li class="sort-photos__item" data-action="sort" data-sort="love"><a class="sort-photos__link" href="">Love Story</a></li>
+            <li class="sort-photos__item" data-action="sort" data-sort="portrait"><a class="sort-photos__link" href="">Портрет</a></li>
+            <li class="sort-photos__item" data-action="sort" data-sort="children"><a class="sort-photos__link" href="">Дети</a></li>
+            <li class="sort-photos__item" data-action="sort" data-sort="events"><a class="sort-photos__link" href="">События</a></li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="center-wrap">
+        <div class="grid" id="photo-container">
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6771.jpg" height="200"  data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6771.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6771.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/10.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/10.jpg" data-realsize="pict/portfolio/big/lovestory/10.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/2.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/2.jpg" data-realsize="pict/portfolio/big/lovestory/2.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/3.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/3.jpg" data-realsize="pict/portfolio/big/lovestory/3.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/4.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/4.jpg" data-realsize="pict/portfolio/big/lovestory/4.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/5.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/5.jpg" data-realsize="pict/portfolio/big/lovestory/5.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/6.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/6.jpg" data-realsize="pict/portfolio/big/lovestory/6.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/7.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/7.jpg" data-realsize="pict/portfolio/big/lovestory/7.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/8.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/8.jpg" data-realsize="pict/portfolio/big/lovestory/8.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/9.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/9.jpg" data-realsize="pict/portfolio/big/lovestory/9.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6648.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6648.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6648.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6650.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6650.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6650.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6726.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6726.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6726.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6752.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6752.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6752.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6758.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6758.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6758.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6761.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6761.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6761.jpg" alt=""/><span></span></div>
+          <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6771.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6771.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6771.jpg" alt=""/><span></span></div>
+        </div>
+      </div>
+
+      <div class="view-photo">
+
+        <div class="view-photo__table" data-action="close">
+          <div class="view-photo__table-cell">
+            <div class="view-photo__wrap">
+              <div class="social-buttons social-buttons--view-photo">
+                <a href="http://vk.com" class="social-buttons__btn social-buttons__btn--vk"></a>
+                <a href="//fb.com" class="social-buttons__btn social-buttons__btn--fb"></a>
+                <a href="#" class="social-buttons__btn social-buttons__btn--twitter"></a>
+                <a href="#" class="social-buttons__btn social-buttons__btn--google"></a>
+              </div>
+              <img class="view-photo__image" src="" data-realsize="" alt=""/>
+              <a href="" class="view-photo__close" data-action="close"></a>
+              <a href="" class="view-photo__open-original" data-action="open-window">Открыть оригинал</a>
+            </div>
+
+            <div class="gallery-controls">
+              <a href="#" class="gallery-controls__prev gallery-controls__prev--center-page" data-action="change-photo"
+                 data-direction="prev"></a>
+              <a href="#" class="gallery-controls__next gallery-controls__next--center-page" data-action="change-photo"
+                 data-direction="next"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+
+
+  <footer class="page-footer">
+
+    <div class="center-wrap clear-fix">
+
+      <div class="page-footer__copyright">© Kotuk Bogdan, portfolio, 2015</div>
+
+
+      <div class="social-buttons">
+        <a href="#" class="social-buttons__btn social-buttons__btn--vk"></a>
+        <a href="#" class="social-buttons__btn social-buttons__btn--fb"></a>
+        <a href="#" class="social-buttons__btn social-buttons__btn--twitter"></a>
+        <a href="#" class="social-buttons__btn social-buttons__btn--google"></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <script>
+    $('.grid').masonry({
+      "gutter": 20,
+      itemSelector: '.grid__item',
+      columnWidth: 300
+    });
+  </script>
+  <script src="js/gallery-inner.js"></script>
+</body>
+</html>
