@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'less-rails'
 gem 'therubyracer'
 gem 'carrierwave'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
