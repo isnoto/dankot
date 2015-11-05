@@ -15,18 +15,12 @@
 </div>
 
 <div class="gallery-main" id="gallery">
-
   <div class="gallery-main__photos" style="margin-left: 0px">
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/1-5.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/10.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/372.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/7.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/9.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/IMG_6767.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/IMG_6771.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/IMG_8606.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/wedd(2)-14.jpg", class: "gallery-main__photo") %></div>
-    <div class="gallery-main__photo-wrap"><%= image_tag("pict/main/wedd(2)-326.jpg", class: "gallery-main__photo") %></div>
+    <% @photos.each do |photo| %>
+      <div class="gallery-main__photo-wrap">
+        <%= image_tag(photo.image, class: "gallery-main__photo") %>
+      </div>
+    <% end %>
   </div>
 
 

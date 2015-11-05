@@ -1,0 +1,24 @@
+<h4>Фотографии на главной</h4>
+<%= link_to "Добавить новую", new_main_page_photo_path %>
+
+<% if @photos.any? %>
+  <% @photos.each do |photo| %>
+    <hr>
+    <%= image_tag(photo.image.thumb) %>
+    <div>Позиция: <%= photo.position %></div>
+    <div>
+      <%= link_to "Редактировать", edit_main_page_photo_path(photo),
+            class: "btn btn-default btn-xs" %>
+      <%= link_to 'Удалить', main_page_photo_path(photo),
+            method: :delete, data: { confirm: "Вы уверены?" },
+            class: "btn btn-default btn-xs" %>
+    </div>
+
+    <div>
+      <%= link_to "Показать увеличенную версию",
+            photo.image.url, target: "_blank" %>
+    </div>
+  <% end %>
+<% else %>
+  Нет фотографий
+<% end %>

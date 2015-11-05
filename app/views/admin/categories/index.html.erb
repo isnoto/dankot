@@ -1,0 +1,12 @@
+<%= link_to "Добавить", new_category_path %>
+<hr>
+
+<% if @categories.any? %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.display_name, category %></li>
+    <% end %>
+  </ul>
+<% else %>
+  Нет категорий
+<% end %>

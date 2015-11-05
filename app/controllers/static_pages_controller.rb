@@ -1,8 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
+    @photos = MainPagePhoto.all
   end
 
   def portfolio
+    @photos = PortfolioPhoto.all
   end
 
   def price
