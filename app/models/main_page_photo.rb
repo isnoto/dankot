@@ -8,12 +8,13 @@ class MainPagePhoto < ActiveRecord::Base
 
   def get_position
     positions = MainPagePhoto.all.map(&:position)
-    new_position = positions.present? ? positions.max + 1 : 1
 
-    if position == 0
-      new_position
+    if positions.present?
+      new_position = positions.max + 1
     else
-      position
+      new_position = 1
     end
+
+    position == 0 ? new_position : position
   end
 end
