@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   scope :admin, module: "admin" do
+    get '/', to: 'main#index'
+    get '/profile', to: 'profile#edit'
+    put '/profile', to: 'profile#update'
     resources :main_page_photos
     resources :portfolio_photos
     resources :categories
-    get '/profile', to: 'profile#edit'
-    put '/profile', to: 'profile#update'
   end
 
   resources :sessions

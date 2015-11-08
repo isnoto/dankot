@@ -1,4 +1,4 @@
-class Admin::PortfolioPhotosController < AdminController
+class Admin::PortfolioPhotosController < Admin::BaseController
   before_action :find_photo, only: [:edit, :update, :destroy]
 
   def index

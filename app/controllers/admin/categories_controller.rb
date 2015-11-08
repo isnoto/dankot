@@ -1,4 +1,4 @@
-class Admin::CategoriesController < AdminController
+class Admin::CategoriesController < Admin::BaseController
   before_action :find_category, only: [:edit, :update, :destroy]
 
   def index

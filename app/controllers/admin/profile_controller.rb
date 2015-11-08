@@ -1,4 +1,4 @@
-class Admin::ProfileController < AdminController
+class Admin::ProfileController < Admin::BaseController
   def edit
   end
 
