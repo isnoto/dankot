@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104141119) do
+ActiveRecord::Schema.define(version: 20151108121139) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -33,5 +33,19 @@ ActiveRecord::Schema.define(version: 20151104141119) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                           null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "failed_logins_count", default: 0
+    t.datetime "lock_expires_at"
+    t.string   "unlock_token"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token"
 
 end

@@ -16,6 +16,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'simple_form'
 gem 'less-rails-bootstrap'
+gem 'sorcery'
 
 group :development, :test do
   gem 'byebug'

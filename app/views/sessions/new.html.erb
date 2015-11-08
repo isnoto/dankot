@@ -1,0 +1,9 @@
+<%= form_tag sessions_path do%>
+  <%= label_tag :email %>
+  <%= text_field_tag :email, params[:email], class: 'form-control' %>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password, nil, class: 'form-control' %>
+  <br>
+  <%= submit_tag "Войти",  class: 'btn btn-default' %>
+<% end %>
