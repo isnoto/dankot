@@ -5,7 +5,15 @@
 <% if @categories.any? %>
   <ul>
     <% @categories.each do |category| %>
-      <li><%= link_to category.display_name, category %></li>
+      <li>
+        <%= category.display_name %>
+        <br>
+        <%= link_to "Редактировать", edit_category_path(category),
+              class: "btn btn-default btn-xs" %>
+        <%= link_to "Удалить", category_path(category), method: :delete,
+              data: { confirm: "Все фотографии в этой категории также удялятся" },
+              class: "btn btn-default btn-xs" %>
+      </li>
     <% end %>
   </ul>
 <% else %>
