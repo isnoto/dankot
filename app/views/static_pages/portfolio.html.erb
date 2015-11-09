@@ -21,25 +21,11 @@
 
 
   <div class="center-wrap">
-    <div class="grid" id="photo-container">
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6771.jpg" height="200"  data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6771.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6771.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/10.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/10.jpg" data-realsize="pict/portfolio/big/lovestory/10.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/2.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/2.jpg" data-realsize="pict/portfolio/big/lovestory/2.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/3.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/3.jpg" data-realsize="pict/portfolio/big/lovestory/3.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/4.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/4.jpg" data-realsize="pict/portfolio/big/lovestory/4.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/5.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/5.jpg" data-realsize="pict/portfolio/big/lovestory/5.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/6.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/6.jpg" data-realsize="pict/portfolio/big/lovestory/6.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/7.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/7.jpg" data-realsize="pict/portfolio/big/lovestory/7.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/8.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/8.jpg" data-realsize="pict/portfolio/big/lovestory/8.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/9.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/9.jpg" data-realsize="pict/portfolio/big/lovestory/9.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6648.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6648.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6648.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6650.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6650.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6650.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6726.jpg" height="450" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6726.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6726.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6752.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6752.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6752.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6758.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6758.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6758.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6761.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6761.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6761.jpg" alt=""/><span></span></div>
-      <div class="grid__item shown" data-action="view-photo"  data-type="love"><img src="pict/portfolio/mosaic/lovestory/IMG_6771.jpg" height="200" data-zoom-src="pict/portfolio/zoom/lovestory/IMG_6771.jpg" data-realsize="pict/portfolio/big/lovestory/IMG_6771.jpg" alt=""/><span></span></div>
-    </div>
+    <% if @photos.any? %>
+      <% @photos.each do |photo| %>
+        <%= image_tag(photo.image.portfolio) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="view-photo">

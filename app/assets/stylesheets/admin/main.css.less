@@ -1,0 +1,138 @@
+@import "twitter/bootstrap/bootstrap";
+@import "variables";
+
+/* Misc */
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  padding: 30px;
+}
+
+span.error {
+  color: @state-danger-text;
+}
+
+.main-title {
+  margin: 10px 0;
+  float: left;
+  font-size: 25px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.profile-controls {
+  float: right;
+}
+
+/*
+  Index admin page
+  Custom Colored Panels
+*/
+
+.glyphicon {
+  font-size: 40px;
+}
+
+.col-title {
+  font-size: 16px;
+}
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: @brand-success;
+    .panel-heading {
+        border-color: @brand-success;
+        color: white;
+        background-color: @brand-success;
+    }
+    a {
+        color: @brand-success;
+        &:hover {
+            color: darken(@brand-success, 15%);
+        }
+    }
+}
+
+.panel-yellow {
+    border-color: @brand-warning;
+    .panel-heading {
+        border-color: @brand-warning;
+        color: white;
+        background-color: @brand-warning;
+    }
+    a {
+        color: @brand-warning;
+        &:hover {
+            color: darken(@brand-warning, 15%);
+        }
+    }
+}
+/* Forms */
+
+input {
+  margin: 10px 0;
+}
+
+/* Flash messages */
+
+.flash {
+  margin: 10px auto;
+  width: 300px;
+  padding: 10px 5px;
+  text-align: center;
+  border-radius: 5px;
+
+  &-alert {
+    background-color: @state-danger-bg;
+    color: @state-danger-text;
+  }
+
+  &-notice {
+    background-color: @state-success-bg;
+    color: @state-success-text;
+  }
+}
+
+/*
+  Portfolio photos page
+  main page photos page
+*/
+
+.thumbnail {
+  padding: 20px;
+  height: 360px;
+
+  img {
+    border-radius: 5px;
+  }
+
+}
+
+.caption {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  margin-left: -113.5px;
+
+  .info {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .show-version-button {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+

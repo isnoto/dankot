@@ -12,14 +12,27 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'less-rails'
 gem 'therubyracer'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'simple_form'
+gem 'less-rails-bootstrap'
+gem 'sorcery'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
+
+  group :test do
+    gem 'rspec-rails'
+    gem 'factory_girl_rails'
+    gem 'capybara'
+  end
 end
 
