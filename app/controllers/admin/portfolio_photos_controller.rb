@@ -19,7 +19,7 @@ class Admin::PortfolioPhotosController < Admin::BaseController
     @photo = PortfolioPhoto.new(photo_params)
 
     if @photo.save
-      redirect_to portfolio_photos_path
+      redirect_to portfolio_photos_path, notice: "Фотография добавлена"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::PortfolioPhotosController < Admin::BaseController
 
   def update
     if @photo.update(photo_params)
-      redirect_to portfolio_photos_path
+      redirect_to portfolio_photos_path, notice: "Фотография обновлена"
     else
       render :new
     end
@@ -35,7 +35,7 @@ class Admin::PortfolioPhotosController < Admin::BaseController
 
   def destroy
     @photo.destroy
-    redirect_to portfolio_photos_path
+    redirect_to portfolio_photos_path, notice: "Фотография удалена"
   end
 
   private
