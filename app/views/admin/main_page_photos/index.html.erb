@@ -1,24 +1,39 @@
-<h4>Фотографии на главной</h4>
-<%= link_to "Добавить новую", new_main_page_photo_path %>
+<div class="well">
+  <h4>Фотографии на главной (<%= @photos.count %>)</h4>
+  <%= link_to "Добавить новую", new_main_page_photo_path %>
+</div>
 
 <% if @photos.any? %>
-  <% @photos.each do |photo| %>
-    <hr>
-    <%= image_tag(photo.image.thumb) %>
-    <div>Позиция: <%= photo.position %></div>
-    <div>
-      <%= link_to "Редактировать", edit_main_page_photo_path(photo),
-            class: "btn btn-default btn-xs" %>
-      <%= link_to 'Удалить', main_page_photo_path(photo),
-            method: :delete, data: { confirm: "Вы уверены?" },
-            class: "btn btn-default btn-xs" %>
-    </div>
+  <% @photos.in_groups_of(3, false).each do |group| %>
+    <div class="row">
 
-    <div>
-      <%= link_to "Показать увеличенную версию",
-            photo.image.url, target: "_blank" %>
+      <% group.each do |photo| %>
+        <div class="col-sm-6 col-md-4">
+
+          <div class="thumbnail">
+            <%= image_tag(photo.image.thumb) %>
+            <div class="caption">
+              <div class="info">Позиция: <%= photo.position %></div>
+              <div class="controls">
+                <%= link_to "Редактировать", edit_main_page_photo_path(photo),
+                            class: "btn btn-primary" %>
+                <%= link_to 'Удалить', main_page_photo_path(photo),
+                      method: :delete, data: { confirm: "Вы уверены?" },
+                      class: "btn btn-primary" %>
+                <div class="show-version-button">
+                  <%= link_to "Показать увеличенную версию",
+                          photo.image.url, target: "_blank",
+                          class: "btn btn-default btn-xs" %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+
     </div>
   <% end %>
 <% else %>
-  Нет фотографий
+  <div>Нет фотографий</div>
 <% end %>

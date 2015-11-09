@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :photos, dependent: :destroy
+  has_many :portfolio_photos, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :display_name, presence: true, uniqueness: true

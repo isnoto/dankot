@@ -1,6 +1,7 @@
-<h4>Категории</h4>
-<%= link_to "Добавить", new_category_path %>
-<hr>
+<div class="well">
+  <h4>Категории (<%= @categories.count %>)</h4>
+  <%= link_to "Добавить", new_category_path %>
+</div>
 
 <% if @categories.any? %>
   <ul>
