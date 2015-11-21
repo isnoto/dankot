@@ -17,7 +17,7 @@ gem 'rmagick'
 gem 'simple_form'
 gem 'less-rails-bootstrap'
 gem 'sorcery'
-
+gem 'masonry-rails'
 
 group :development, :test do
   gem 'byebug'
