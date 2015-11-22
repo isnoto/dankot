@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'less-rails-bootstrap'
 gem 'sorcery'
 gem 'masonry-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'
