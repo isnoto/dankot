@@ -3,10 +3,6 @@ class StaticPagesController < ApplicationController
     @photos = MainPagePhoto.all
   end
 
-  def portfolio
-    @photos = PortfolioPhoto.all
-  end
-
   def price
   end
 
