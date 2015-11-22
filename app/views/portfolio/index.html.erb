@@ -1,4 +1,4 @@
-<%= render 'header' %>
+<%= render 'shared/header' %>
 
 <div class="gallery-portfolio" id="gallery-inner">
   <div class="sort-photos">
@@ -21,39 +21,36 @@
 
 
   <div class="center-wrap">
-    <% if @photos.any? %>
-      <% @photos.each do |photo| %>
-        <%= image_tag(photo.image.portfolio) %>
-      <% end %>
-    <% end %>
-  </div>
+    <div class="grid" id="photo-container">
 
-  <div class="view-photo">
+    </div>
 
-    <div class="view-photo__table" data-action="close">
-      <div class="view-photo__table-cell">
-        <div class="view-photo__wrap">
-          <div class="social-buttons social-buttons--view-photo">
-            <a href="http://vk.com" class="social-buttons__btn social-buttons__btn--vk"></a>
-            <a href="//fb.com" class="social-buttons__btn social-buttons__btn--fb"></a>
-            <a href="#" class="social-buttons__btn social-buttons__btn--twitter"></a>
-            <a href="#" class="social-buttons__btn social-buttons__btn--google"></a>
+    <div class="view-photo">
+
+      <div class="view-photo__table" data-action="close">
+        <div class="view-photo__table-cell">
+          <div class="view-photo__wrap">
+            <div class="social-buttons social-buttons--view-photo">
+              <a href="http://vk.com" class="social-buttons__btn social-buttons__btn--vk"></a>
+              <a href="//fb.com" class="social-buttons__btn social-buttons__btn--fb"></a>
+              <a href="#" class="social-buttons__btn social-buttons__btn--twitter"></a>
+              <a href="#" class="social-buttons__btn social-buttons__btn--google"></a>
+            </div>
+            <img class="view-photo__image" src="" data-realsize="" alt=""/>
+            <a href="" class="view-photo__close" data-action="close"></a>
+            <a href="" class="view-photo__open-original" data-action="open-window">Открыть оригинал</a>
           </div>
-          <img class="view-photo__image" src="" data-realsize="" alt=""/>
-          <a href="" class="view-photo__close" data-action="close"></a>
-          <a href="" class="view-photo__open-original" data-action="open-window">Открыть оригинал</a>
-        </div>
 
-        <div class="gallery-controls">
-          <a href="#" class="gallery-controls__prev gallery-controls__prev--center-page" data-action="change-photo"
-             data-direction="prev"></a>
-          <a href="#" class="gallery-controls__next gallery-controls__next--center-page" data-action="change-photo"
-             data-direction="next"></a>
+          <div class="gallery-controls">
+            <a href="#" class="gallery-controls__prev gallery-controls__prev--center-page" data-action="change-photo"
+               data-direction="prev"></a>
+            <a href="#" class="gallery-controls__next gallery-controls__next--center-page" data-action="change-photo"
+               data-direction="next"></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 </body>
 </html>
