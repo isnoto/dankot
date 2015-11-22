@@ -11,10 +11,14 @@ Rails.application.routes.draw do
   end
 
   resources :sessions
+  resources :portfolio, only: [:index] do
+    get 'photos', on: :collection
+  end
 
   delete 'logout', to: 'sessions#destroy'
   get 'admin',     to: 'admin#index'
-  get 'portfolio', to: 'static_pages#portfolio'
+  get 'portfolio', to: 'portfolio#index'
+  get 'photos',    to: 'portfolio#photos'
   get 'price',     to: 'static_pages#price'
   get 'about',     to: 'static_pages#about'
   get 'contacts',  to: 'static_pages#contacts'
