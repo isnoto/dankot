@@ -60,32 +60,6 @@ Gallery.prototype.changeSortClass = function(target) {
   }
 
   target.classList.add("sort-photos__item--active");
-  this.sortPhotos(target);
-};
-
-Gallery.prototype.sortPhotos = function(target) {
-  var sortCheck = target.getAttribute("data-sort");
-  var imgs = this.elem.querySelector("#photo-container").querySelectorAll(".grid__item");
-  var img;
-
-  if (sortCheck == "all") {
-    for (var j = 0; j < imgs.length; j++) {
-      img = imgs[j];
-      img.classList.add("shown");
-    }
-
-    this.masonry();
-    return;
-  }
-
-  for (var i = 0; i < imgs.length; i++) {
-    img = imgs[i];
-    img.classList.add("shown");
-    if(img.getAttribute("data-type") == sortCheck) continue;
-    img.classList.remove("shown");
-  }
-
-  this.masonry();
 };
 
 Gallery.prototype.showPopup = function(target) {
@@ -194,15 +168,6 @@ Gallery.prototype.newWindow = function() {
   window.open(imgPhoto.getAttribute("data-realsize"));
 };
 
-Gallery.prototype.masonry = function() {
-  var elem = document.querySelector('.grid');
-  var msnry = new Masonry( elem, {
-    "gutter": 20,
-    itemSelector: '.grid__item',
-    columnWidth: 300
-  });
-};
-
 function Carousel(options) {
   var elem = this.elem = options.elem;
   this.position = 0;
@@ -254,76 +219,104 @@ Carousel.prototype.prev = function(width) {
   this.elem.querySelector(".gallery-main__photos").style.marginLeft = this.position + "px";
 };
 
+function portfolio() {
+  function initPortfolio() {
+    var loading=true;
+    $.ajax({
+      url: '/photos?page=1&id=1',
+      type: 'get',
+      dataType: 'script',
+      success: function(data) {
+        var arr = JSON.parse(data);
+        console.log(data);
+        initMasonry();
+        appendItems(arr);
+        loading=false;
+
+        initInfiniteScroll();
+      }
+    });
+  }
+
+  initPortfolio();
+
+  function initMasonry() {
+    var $container = $('#photo-container');
+    $container.imagesLoaded(function() {
+      $container.masonry({
+        itemSelector: '.grid__item',
+        gutter: 20,
+        columnWidth: 300
+      });
+    });
+  }
+
+  function initInfiniteScroll() {
+    var page = 1,
+      loading = false;
+
+    function nearBottomOfPage() {
+      return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
+    }
+
+    $(window).scroll(function(){
+      if (loading) {
+        return;
+      }
+
+      if(nearBottomOfPage()) {
+        loading=true;
+        page++;
+        $.ajax({
+          url: '/photos?page=' + page+'&id=1',
+          type: 'get',
+          dataType: 'script',
+          success: function(data) {
+            appendItems(data);
+
+            loading=false;
+          }
+        });
+      }
+    });
+  }
+
+  function appendItems(arr) {
+    var $container = $('#photo-container');
+
+    var fragment = document.createDocumentFragment();
+    var elems = [];
+
+    elems = arr.map(function(item) {
+      var $elem = $('<div class="grid__item"><img src="' + item.image.portfolio.url + '" /></div>');
+      $elem.hide();
+      // get DOM element, not jQuery
+      var elem = $elem[0];
+      // add element, not jQuery, to fragment
+      fragment.appendChild( elem );
+      return elem
+    });
+    // append elems to container
+    $container.append( fragment );
+
+    $container.imagesLoaded(function() {
+      // show items once all visible
+      $( elems ).show();
+      $container.masonry( 'appended', elems )
+    });
+  }
+}
+
 window.onload = function() {
   if (document.getElementById("gallery")) {
     var carousel = new Carousel({elem: document.getElementById("gallery")});
   } else {
     if (document.getElementById("gallery-inner")) {
+      portfolio();
       var gallery = new Gallery({elem: document.getElementById("gallery-inner")});
     }
   }
-}
-
-function Carousel(options) {
-  var elem = this.elem = options.elem;
-  this.position = 0;
-
-  elem.addEventListener("click", function(event){
-    this.checkDirection(event);
-  }.bind(this));
-
-  elem.addEventListener("keypress", function(event){
-    this.checkDirection(event);
-  }.bind(this))
-}
-
-Carousel.prototype.checkDirection = function(event) {
-  var direction = event.target.getAttribute("data-direction");
-
-  switch (direction) {
-    case 'prev' :
-      this.prev(this.elem.offsetWidth);
-      break;
-    case 'next' :
-      this.next(this.elem.offsetWidth);
-      break;
-  }
 };
-
-Carousel.prototype.next = function (width) {
-  this.position += -width;
-  var w = width, img = this.elem.querySelectorAll('div.gallery-main__photo-wrap');
-  for (var i=0; i<img.length; i++) {
-    w -= (img[i].offsetWidth + 20)
-
-  }
-
-  w += 20;
-  // if (w > this.position)  this.position = w;
-  this.position = Math.max(w, this.position);
-  this.elem.querySelector('.gallery-main__photos').style.marginLeft = this.position + 'px';
-};
-
-Carousel.prototype.prev = function(width) {
-  this.position += +width;
-
-  if (this.position >= 0) {
-    this.elem.querySelector(".gallery-main__photos").style.marginLeft = 0 + "px";
-    this.position = 0;
-  }
-
-  this.elem.querySelector(".gallery-main__photos").style.marginLeft = this.position + "px";
-};
-
-window.onload = function() {
-  if (document.getElementById("gallery")) {
-    var carousel = new Carousel({elem: document.getElementById("gallery")});
-  } else {
-    if (document.getElementById("gallery-inner")) {
-      var gallery = new Gallery({elem: document.getElementById("gallery-inner")});
-    }
-  }
-}
 
 
 
