@@ -60,8 +60,8 @@ Gallery.prototype.changeSortClass = function(target) {
 
   target.classList.add("sort-photos__item--active");
 
-  portfolio();
   $(window).off('scroll');
+  portfolio();
 };
 
 Gallery.prototype.showPopup = function(target) {
