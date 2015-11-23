@@ -5,6 +5,7 @@ class PortfolioController < ApplicationController
 
   def photos
     @photos = get_photos.page(photos_params[:page]).per(10)
+    @photos.push({last_page: last_page?})
 
     respond_to do |format|
       format.json { render json: @photos }

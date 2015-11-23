@@ -60,7 +60,7 @@ Gallery.prototype.changeSortClass = function(target) {
 
   target.classList.add("sort-photos__item--active");
 
-  $(window).off('scroll');
+  $(window).off("scroll");
   portfolio();
 };
 
@@ -315,6 +315,12 @@ function portfolio() {
   }
 
   function appendItems(arr) {
+    var lastPage = arr.pop().last_page;
+
+    if (lastPage) {
+      $(window).off("scroll");
+    }
+
     var $container = $('#photo-container');
     var fragment = document.createDocumentFragment();
     var elems = [];
