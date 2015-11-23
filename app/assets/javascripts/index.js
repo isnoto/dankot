@@ -20,7 +20,6 @@ Gallery.prototype.checkAction = function(event) {
     target = event.target.parentNode;
   }
 
-
   var action = target.getAttribute("data-action");
 
   switch (action) {
@@ -60,6 +59,9 @@ Gallery.prototype.changeSortClass = function(target) {
   }
 
   target.classList.add("sort-photos__item--active");
+
+  portfolio();
+  $(window).off('scroll');
 };
 
 Gallery.prototype.showPopup = function(target) {
@@ -203,7 +205,6 @@ Carousel.prototype.next = function (width) {
   }
 
   w += 20;
-  // if (w > this.position)  this.position = w;
   this.position = Math.max(w, this.position);
   this.elem.querySelector('.gallery-main__photos').style.marginLeft = this.position + 'px';
 };
@@ -221,21 +222,38 @@ Carousel.prototype.prev = function(width) {
 
 function portfolio() {
   function initPortfolio() {
+    var photoContainer = document.getElementById('photo-container');
     var loading=true;
+    var page = 1;
+    var downloadUrl = getDownloadUrl(page);
+    document.getElementById('info-loading').style.display = 'block';
+    initInfiniteScroll();
+
     $.ajax({
-      url: '/photos?page=1&id=1',
+      url: downloadUrl,
       type: 'get',
       dataType: 'script',
       success: function(data) {
+        if (photoContainer.firstElementChild) {
+          photoContainer.innerHTML = '';
+        }
+
         var arr = JSON.parse(data);
-        console.log(data);
         initMasonry();
         appendItems(arr);
         loading=false;
-
-        initInfiniteScroll();
       }
     });
+
+    function getDownloadUrl(page) {
+      var currentSortItem = document.querySelector('.sort-photos__item--active');
+      if (currentSortItem.getAttribute('data-sort') == 'all') {
+        return '/photos?page=' + page;
+      } else {
+        var category_id = currentSortItem.getAttribute('data-category_id');
+        return '/photos?page=' + page+'&category_id='+ category_id;
+      }
+    }
   }
 
   initPortfolio();
@@ -252,14 +270,15 @@ function portfolio() {
   }
 
   function initInfiniteScroll() {
-    var page = 1,
-      loading = false;
+    var page = 1;
+    var loading = false;
 
     function nearBottomOfPage() {
       return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
     }
 
-    $(window).scroll(function(){
+    $(window).scroll(test);
+    function test(){
       if (loading) {
         return;
       }
@@ -267,42 +286,55 @@ function portfolio() {
       if(nearBottomOfPage()) {
         loading=true;
         page++;
+        var downloadUrl = getDownloadUrl(page);
+        document.getElementById('info-loading').style.display = 'block';
         $.ajax({
-          url: '/photos?page=' + page+'&id=1',
+          url: downloadUrl,
           type: 'get',
           dataType: 'script',
           success: function(data) {
-            appendItems(data);
+            var arr = JSON.parse(data);
+            appendItems(arr);
 
             loading=false;
           }
         });
       }
-    });
+    }
+
+    function getDownloadUrl(page) {
+      var currentSortItem = document.querySelector('.sort-photos__item--active');
+
+      if (currentSortItem.getAttribute('data-sort') == 'all') {
+        return '/photos?page=' + page;
+      } else {
+        var category_id = currentSortItem.getAttribute('data-category_id');
+        return '/photos?page=' + page+'&category_id='+ category_id;
+      }
+    }
   }
 
   function appendItems(arr) {
     var $container = $('#photo-container');
-
     var fragment = document.createDocumentFragment();
     var elems = [];
 
     elems = arr.map(function(item) {
-      var $elem = $('<div class="grid__item"><img src="' + item.image.portfolio.url + '" /></div>');
+      var $elem = $('<div class="grid__item" data-action="view-photo"><img src="' + item.image.portfolio.url + '" data-zoom-src="' + item.image.zoom.url +'" data-realsize="'+ item.image.url +'" /></div>');
       $elem.hide();
-      // get DOM element, not jQuery
+
       var elem = $elem[0];
-      // add element, not jQuery, to fragment
+
       fragment.appendChild( elem );
       return elem
     });
-    // append elems to container
+
     $container.append( fragment );
 
     $container.imagesLoaded(function() {
-      // show items once all visible
       $( elems ).show();
-      $container.masonry( 'appended', elems )
+      $container.masonry( 'appended', elems );
+      document.getElementById('info-loading').style.display = 'none';
     });
   }
 }
@@ -317,11 +349,3 @@ window.onload = function() {
     }
   }
 };
-
-
-
-
-
-
-
-

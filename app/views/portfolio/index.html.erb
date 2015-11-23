@@ -9,11 +9,10 @@
 
       <ul class="sort-photos__list">
         <li class="sort-photos__item sort-photos__item--active" data-action="sort" data-sort="all" ><a class="sort-photos__link" href="">Все</a></li>
-        <li class="sort-photos__item" data-action="sort" data-sort="wedding"><a class="sort-photos__link" href="">Свадьба</a></li>
-        <li class="sort-photos__item" data-action="sort" data-sort="love"><a class="sort-photos__link" href="">Love Story</a></li>
-        <li class="sort-photos__item" data-action="sort" data-sort="portrait"><a class="sort-photos__link" href="">Портрет</a></li>
-        <li class="sort-photos__item" data-action="sort" data-sort="children"><a class="sort-photos__link" href="">Дети</a></li>
-        <li class="sort-photos__item" data-action="sort" data-sort="events"><a class="sort-photos__link" href="">События</a></li>
+        <% @categories.each do |category| %>
+          <li class="sort-photos__item" data-category_id="<%=	category.id  %>" data-action="sort"><a href="#" class="sort-photos__link"><%= category.display_name %></a></li>
+        <% end %>
+
       </ul>
 
     </div>
@@ -22,9 +21,15 @@
 
   <div class="center-wrap">
     <div class="grid" id="photo-container">
-
     </div>
 
+    <div class="spinner-wrap">
+      <div class="spinner" id="info-loading" style="display: none;">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
     <div class="view-photo">
 
       <div class="view-photo__table" data-action="close">
