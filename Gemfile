@@ -19,6 +19,7 @@ gem 'less-rails-bootstrap'
 gem 'sorcery'
 gem 'masonry-rails'
 gem 'kaminari'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
