@@ -1,61 +1,61 @@
 <%= render 'shared/header' %>
 
-<div class="gallery-portfolio" id="gallery-inner">
-  <div class="sort-photos">
+  <div class="gallery-portfolio" id="gallery-inner">
+    <div class="sort-photos">
 
-    <div class="center-wrap clear-fix">
-      <span class="sort-photos__bracket sort-photos__bracket--left">[</span>
-      <span class="sort-photos__bracket sort-photos__bracket--right">]</span>
+      <div class="center-wrap clear-fix">
+        <span class="sort-photos__bracket sort-photos__bracket--left">[</span>
+        <span class="sort-photos__bracket sort-photos__bracket--right">]</span>
 
-      <ul class="sort-photos__list">
-        <li class="sort-photos__item sort-photos__item--active" data-action="sort" data-sort="all" ><a class="sort-photos__link" href="">Все</a></li>
-        <% @categories.each do |category| %>
-          <li class="sort-photos__item" data-category_id="<%=	category.id  %>" data-action="sort"><a href="#" class="sort-photos__link"><%= category.display_name %></a></li>
-        <% end %>
+        <ul class="sort-photos__list">
+          <li class="sort-photos__item sort-photos__item--active" data-action="sort" data-sort="all" ><a class="sort-photos__link" href="">Все</a></li>
+          <% @categories.each do |category| %>
+            <li class="sort-photos__item" data-category_id="<%=	category.id  %>" data-action="sort"><a href="#" class="sort-photos__link"><%= category.display_name %></a></li>
+          <% end %>
 
-      </ul>
+        </ul>
 
-    </div>
-  </div>
-
-
-  <div class="center-wrap">
-    <div class="grid" id="photo-container">
-    </div>
-
-    <div class="spinner-wrap">
-      <div class="spinner" id="info-loading" style="display: none;">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
       </div>
     </div>
-    <div class="view-photo">
 
-      <div class="view-photo__table" data-action="close">
-        <div class="view-photo__table-cell">
-          <div class="view-photo__wrap">
-            <div class="social-buttons social-buttons--view-photo">
-              <a href="http://vk.com" class="social-buttons__btn social-buttons__btn--vk"></a>
-              <a href="//fb.com" class="social-buttons__btn social-buttons__btn--fb"></a>
-              <a href="#" class="social-buttons__btn social-buttons__btn--twitter"></a>
-              <a href="#" class="social-buttons__btn social-buttons__btn--google"></a>
+
+    <div class="center-wrap">
+      <div class="grid" id="photo-container">
+      </div>
+
+      <div class="spinner-wrap">
+        <div class="spinner" id="info-loading" style="display: none;">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      </div>
+      <div class="view-photo">
+
+        <div class="view-photo__table" data-action="close">
+          <div class="view-photo__table-cell">
+            <div class="view-photo__wrap">
+              <div class="social-buttons social-buttons--view-photo">
+                <a href="http://vk.com" class="social-buttons__btn social-buttons__btn--vk"></a>
+                <a href="//fb.com" class="social-buttons__btn social-buttons__btn--fb"></a>
+                <a href="#" class="social-buttons__btn social-buttons__btn--twitter"></a>
+                <a href="#" class="social-buttons__btn social-buttons__btn--google"></a>
+              </div>
+              <img class="view-photo__image" src="" data-realsize="" alt=""/>
+              <a href="" class="view-photo__close" data-action="close"></a>
+              <a href="" class="view-photo__open-original" data-action="open-window">Открыть оригинал</a>
             </div>
-            <img class="view-photo__image" src="" data-realsize="" alt=""/>
-            <a href="" class="view-photo__close" data-action="close"></a>
-            <a href="" class="view-photo__open-original" data-action="open-window">Открыть оригинал</a>
-          </div>
 
-          <div class="gallery-controls">
-            <a href="#" class="gallery-controls__prev gallery-controls__prev--center-page" data-action="change-photo"
-               data-direction="prev"></a>
-            <a href="#" class="gallery-controls__next gallery-controls__next--center-page" data-action="change-photo"
-               data-direction="next"></a>
+            <div class="gallery-controls">
+              <a href="#" class="gallery-controls__prev gallery-controls__prev--center-page" data-action="change-photo"
+                 data-direction="prev"></a>
+              <a href="#" class="gallery-controls__next gallery-controls__next--center-page" data-action="change-photo"
+                 data-direction="next"></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </body>
 </html>

@@ -245,15 +245,6 @@ function portfolio() {
       }
     });
 
-    function getDownloadUrl(page) {
-      var currentSortItem = document.querySelector('.sort-photos__item--active');
-      if (currentSortItem.getAttribute('data-sort') == 'all') {
-        return '/photos?page=' + page;
-      } else {
-        var category_id = currentSortItem.getAttribute('data-category_id');
-        return '/photos?page=' + page+'&category_id='+ category_id;
-      }
-    }
   }
 
   initPortfolio();
@@ -301,16 +292,15 @@ function portfolio() {
         });
       }
     }
+  }
 
-    function getDownloadUrl(page) {
-      var currentSortItem = document.querySelector('.sort-photos__item--active');
-
-      if (currentSortItem.getAttribute('data-sort') == 'all') {
-        return '/photos?page=' + page;
-      } else {
-        var category_id = currentSortItem.getAttribute('data-category_id');
-        return '/photos?page=' + page+'&category_id='+ category_id;
-      }
+  function getDownloadUrl(page) {
+    var currentSortItem = document.querySelector('.sort-photos__item--active');
+    if (currentSortItem.getAttribute('data-sort') == 'all') {
+      return '/photos?page=' + page;
+    } else {
+      var category_id = currentSortItem.getAttribute('data-category_id');
+      return '/photos?page=' + page+'&category_id='+ category_id;
     }
   }
 
