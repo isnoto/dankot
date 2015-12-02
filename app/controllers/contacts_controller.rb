@@ -8,10 +8,9 @@ class ContactsController < ApplicationController
 
     if @message.valid?
       FeedbackMailer.new_message(@message).deliver_now
-      redirect_to contacts_path, notice: 'Успешно отправлено'
+      redirect_to contacts_path, notice: ''
     end
   end
-
 
   private
 

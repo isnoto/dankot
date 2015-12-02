@@ -1,9 +1,13 @@
-<%= form_for @message, url: contacts_path, html: { class: "contacts__feedback" } do |f| %>
-  <div class="contacts__title">Обратная связь</div>
-  <%= f.text_field :name, placeholder: 'Имя' %>
-  <%= f.text_field :email, placeholder: 'E-Mail'%>
-  <%= f.text_field :phone, placeholder: 'Телеофон'%>
-  <%= f.text_area :text, placeholder: 'Сообщение'%>
+<% if flash.any? %>
+  <%= render 'shared/success_deliver' %>
+<% else %>
+  <%= form_for @message, url: contacts_path, html: { class: "contacts__feedback" } do |f| %>
+    <div class="contacts__title">Обратная связь</div>
+    <%= f.text_field :name, placeholder: 'Имя' %>
+    <%= f.text_field :email, placeholder: 'E-Mail'%>
+    <%= f.text_field :phone, placeholder: 'Телеофон'%>
+    <%= f.text_area :text, placeholder: 'Сообщение'%>
 
-  <%= f.submit 'Отправить'%>
+    <%= f.submit 'Отправить'%>
+  <% end %>
 <% end %>
