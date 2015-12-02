@@ -24,7 +24,29 @@
       margin-right: 0;
     }
   }
-
 }
 
+.btn-wrap {
+  position: relative;
+}
 
+.btn {
+  position: absolute;
+  display: block;
+  padding: 16px 25px 14px;
+  outline: none;
+  margin: 0 auto;
+  background-color: #4d4d4d;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1;
+  border-radius: 5px;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: -50px;
+
+  &:hover {
+    opacity: .8;
+  }
+}

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
-  scope :admin, module: "admin" do
+  scope :admin, module: 'admin' do
     get '/', to: 'main#index'
     get '/profile', to: 'profile#edit'
     put '/profile', to: 'profile#update'
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :sessions
+  resources :contacts, only: [:new, :create]
   resources :portfolio, only: [:index] do
     get 'photos', on: :collection
   end
@@ -21,5 +22,5 @@ Rails.application.routes.draw do
   get 'photos',    to: 'portfolio#photos'
   get 'price',     to: 'static_pages#price'
   get 'about',     to: 'static_pages#about'
-  get 'contacts',  to: 'static_pages#contacts'
+  get 'contacts',  to: 'contacts#new'
 end

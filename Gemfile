@@ -19,18 +19,23 @@ gem 'less-rails-bootstrap'
 gem 'sorcery'
 gem 'masonry-rails'
 gem 'kaminari'
-gem 'rails_12factor', group: :production
+gem 'passenger'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-nav'
+  gem 'dotenv-rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rvm', require: false
 
   group :test do
     gem 'rspec-rails'
