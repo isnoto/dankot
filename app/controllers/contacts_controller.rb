@@ -9,9 +9,6 @@ class ContactsController < ApplicationController
     if @message.valid?
       FeedbackMailer.new_message(@message).deliver_now
       redirect_to contacts_path, notice: 'Успешно отправлено'
-    else
-      flash.now[:alert] = 'Не отправлено'
-      render :new
     end
   end
 
