@@ -19,7 +19,6 @@ gem 'less-rails-bootstrap'
 gem 'sorcery'
 gem 'masonry-rails'
 gem 'kaminari'
-gem 'rails_12factor', group: :production
 gem 'passenger'
 
 group :development, :test do
