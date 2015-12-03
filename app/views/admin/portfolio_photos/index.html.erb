@@ -1,6 +1,6 @@
 <div class="well">
   <h4>Фотографии на странице портфолио (<%= @photos.count %>)</h4>
-  <%= link_to "Добавить новую", new_portfolio_photo_path %>
+  <%= link_to "Добавить новую", new_admin_portfolio_photo_path %>
 </div>
 
 
@@ -16,9 +16,9 @@
             <div class="caption">
               <div class="info">Категория: <%= photo.category.display_name %></div>
               <div class="controls">
-                <%= link_to "Редактировать", edit_portfolio_photo_path(photo),
+                <%= link_to "Редактировать", edit_admin_portfolio_photo_path(photo),
                             class: "btn btn-primary" %>
-                <%= link_to 'Удалить', portfolio_photo_path(photo),
+                <%= link_to 'Удалить', admin_portfolio_photo_path(photo),
                       method: :delete, data: { confirm: "Вы уверены?" },
                       class: "btn btn-primary" %>
                 <div class="show-version-button">

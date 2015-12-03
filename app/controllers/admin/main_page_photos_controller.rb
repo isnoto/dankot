@@ -19,7 +19,7 @@ class Admin::MainPagePhotosController < Admin::BaseController
     @photo = MainPagePhoto.new(photo_params)
 
     if @photo.save
-      redirect_to main_page_photos_path, notice: "Фотография добавлена"
+      redirect_to admin_main_page_photos_path, notice: "Фотография добавлена"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::MainPagePhotosController < Admin::BaseController
 
   def update
     if @photo.update(photo_params)
-      redirect_to main_page_photos_path, notice: "Фотография обновлена"
+      redirect_to admin_main_page_photos_path, notice: "Фотография обновлена"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::MainPagePhotosController < Admin::BaseController
 
   def destroy
     @photo.destroy
-    redirect_to main_page_photos_path, notice: "Фотография удалена"
+    redirect_to admin_main_page_photos_path, notice: "Фотография удалена"
   end
 
   private

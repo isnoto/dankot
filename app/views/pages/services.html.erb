@@ -1,0 +1,22 @@
+  <%= render 'shared/header' %>
+
+    <div class="center-wrap">
+
+      <div class="price">
+        <h3 class="price__title">Услуги</h3>
+        <div class="price__items">
+          <% @services.each  do |service|%>
+            <div class="price__item clear-fix">
+              <div class="price__name"><%= service.name %> <span class="price__desc">(<%= service.description %>)</span></div>
+              <div class="price__value"><%= service.value %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="work-details">
+        <h2 class="work-details__title">Все детали обсуждаються</h2>
+        <h3 class="work-details__subtitle">Работаю по всей Украине</h3>
+        <p class="work-details__desc">Работаю с отличными видеооператорами, визажистами, парикмахерами, магазинами одежды, музыкантами, ведущими мероприятий.</p>
+      </div>
+    </div>

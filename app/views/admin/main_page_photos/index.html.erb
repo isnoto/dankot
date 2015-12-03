@@ -1,6 +1,6 @@
 <div class="well">
   <h4>Фотографии на главной (<%= @photos.count %>)</h4>
-  <%= link_to "Добавить новую", new_main_page_photo_path %>
+  <%= link_to "Добавить новую", new_admin_main_page_photo_path %>
 </div>
 
 <% if @photos.any? %>
@@ -15,9 +15,9 @@
             <div class="caption">
               <div class="info">Позиция: <%= photo.position %></div>
               <div class="controls">
-                <%= link_to "Редактировать", edit_main_page_photo_path(photo),
+                <%= link_to "Редактировать", edit_admin_main_page_photo_path(photo),
                             class: "btn btn-primary" %>
-                <%= link_to 'Удалить', main_page_photo_path(photo),
+                <%= link_to 'Удалить', admin_main_page_photo_path(photo),
                       method: :delete, data: { confirm: "Вы уверены?" },
                       class: "btn btn-primary" %>
                 <div class="show-version-button">

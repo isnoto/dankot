@@ -1,70 +1,96 @@
 <div class="row">
   <div class="col col-md-4">
-      <div class="panel panel-primary">
-          <div class="panel-heading">
-              <div class="row">
-                  <div class="col-xs-3">
-                      <i class="glyphicon glyphicon-picture"></i>
-                  </div>
-                  <div class="col-xs-9 text-right">
-                      <div class="col-title">Фотографии на главной</div>
-                      <div class="huge"><%= MainPagePhoto.count %></div>
-                  </div>
-              </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="glyphicon glyphicon-picture"></i>
           </div>
-          <a href="#">
-              <div class="panel-footer">
-                  <span class="pull-left"><%= link_to "Подробнее", main_page_photos_path %></span>
-                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                  <div class="clearfix"></div>
-              </div>
-          </a>
+          <div class="col-xs-9 text-right">
+            <div class="col-title">Фотографии на главной</div>
+            <div class="huge"><%= MainPagePhoto.count %></div>
+          </div>
+        </div>
       </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left"><%= link_to "Подробнее", admin_main_page_photos_path %></span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
   </div>
 
   <div class="col col-md-4">
-      <div class="panel panel-green">
-          <div class="panel-heading">
-              <div class="row">
-                  <div class="col-xs-3">
-                      <i class="glyphicon glyphicon-briefcase"></i>
-                  </div>
-                  <div class="col-xs-9 text-right">
-                      <div class="col-title">Фотографии в портфолио</div>
-                      <div class="huge"><%= PortfolioPhoto.count %></div>
-                  </div>
-              </div>
+    <div class="panel panel-green">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="glyphicon glyphicon-briefcase"></i>
           </div>
-          <a href="#">
-              <div class="panel-footer">
-                  <span class="pull-left"><%= link_to "Подробнее", portfolio_photos_path %></span>
-                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                  <div class="clearfix"></div>
-              </div>
-          </a>
+          <div class="col-xs-9 text-right">
+            <div class="col-title">Фотографии в портфолио</div>
+            <div class="huge"><%= PortfolioPhoto.count %></div>
+          </div>
+        </div>
       </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left"><%= link_to "Подробнее", admin_portfolio_photos_path %></span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
   </div>
 
   <div class="col col-md-4">
-      <div class="panel panel-yellow">
-          <div class="panel-heading">
-              <div class="row">
-                  <div class="col-xs-3">
-                      <i class="glyphicon glyphicon-tasks"></i>
-                  </div>
-                  <div class="col-xs-9 text-right">
-                      <div class="col-title">Категории</div>
-                      <div class="huge"><%= Category.count %></div>
-                  </div>
-              </div>
+    <div class="panel panel-yellow">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="glyphicon glyphicon-tasks"></i>
           </div>
-          <a href="#">
-              <div class="panel-footer">
-                  <span class="pull-left"><%= link_to "Подробнее", categories_path %></span>
-                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                  <div class="clearfix"></div>
-              </div>
-          </a>
+          <div class="col-xs-9 text-right">
+            <div class="col-title">Категории</div>
+            <div class="huge"><%= Category.count %></div>
+          </div>
+        </div>
       </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left"><%= link_to "Подробнее", admin_categories_path %></span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col col-md-4">
+    <div class="panel panel-red">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="glyphicon glyphicon-list-alt"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="col-title">Услуги</div>
+            <div class="huge"><%= Service.count %></div>
+          </div>
+        </div>
+      </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left"><%= link_to "Подробнее", admin_services_path %></span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>

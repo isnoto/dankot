@@ -1,6 +1,6 @@
 <div class="well">
   <h4>Категории (<%= @categories.count %>)</h4>
-  <%= link_to "Добавить", new_category_path %>
+  <%= link_to "Добавить", new_admin_category_path %>
 </div>
 
 <% if @categories.any? %>
@@ -9,9 +9,9 @@
       <li>
         <%= category.display_name %>
         <br>
-        <%= link_to "Редактировать", edit_category_path(category),
+        <%= link_to "Редактировать", edit_admin_category_path(category),
               class: "btn btn-default btn-xs" %>
-        <%= link_to "Удалить", category_path(category), method: :delete,
+        <%= link_to "Удалить", admin_category_path(category), method: :delete,
               data: { confirm: "Все фотографии в этой категории также удялятся" },
               class: "btn btn-default btn-xs" %>
       </li>

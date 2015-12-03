@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'pages#home'
 
-  scope :admin, module: 'admin' do
+  namespace :admin do
     get '/', to: 'main#index'
     get '/profile', to: 'profile#edit'
     put '/profile', to: 'profile#update'
     resources :main_page_photos
     resources :portfolio_photos
     resources :categories
+    resources :services
   end
 
   resources :sessions
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   get 'admin',     to: 'admin#index'
   get 'portfolio', to: 'portfolio#index'
   get 'photos',    to: 'portfolio#photos'
-  get 'price',     to: 'static_pages#price'
-  get 'about',     to: 'static_pages#about'
+  get 'services',  to: 'pages#services'
+  get 'about',     to: 'pages#about'
   get 'contacts',  to: 'contacts#new'
 end
