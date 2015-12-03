@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @photos = MainPagePhoto.all
   end
 
-  def price
+  def services
     @services = Service.all
   end
 

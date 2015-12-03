@@ -78,6 +78,21 @@ span.error {
         }
     }
 }
+
+.panel-red {
+  border-color: @brand-danger;
+  .panel-heading {
+    border-color: @brand-danger;
+    color: white;
+    background-color: @brand-danger;
+  }
+  a {
+    color: @brand-danger;
+    &:hover {
+      color: darken(@brand-danger, 15%);
+    }
+  }
+}
 /* Forms */
 
 input {

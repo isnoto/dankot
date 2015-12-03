@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, service] do |f| %>
+  <%= f.input :name, input_html: { class: 'form-control' } %>
+  <%= f.input :description, input_html: { class: 'form-control' } %>
+  <%= f.input :value, input_html: { class: 'form-control' } %>
+  <%= f.button :submit %>
+<% end %>

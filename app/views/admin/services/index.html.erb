@@ -1,0 +1,23 @@
+<div class="well">
+  <h4>Услуги (<%= @services.count %>)</h4>
+  <%= link_to "Добавить", new_admin_service_path %>
+</div>
+
+<% if @services.any? %>
+  <ul>
+    <% @services.each do |service| %>
+      <li>
+        <div>Название услуги: <%= service.name %></div>
+        <div>Описание: <%= service.description %></div>
+        <div>Стоимость: <%= service.value %></div>
+
+        <%= link_to "Редактировать", edit_admin_service_path(service),
+                    class: "btn btn-default btn-xs" %>
+        <%= link_to "Удалить", admin_service_path(service), method: :delete,
+                    class: "btn btn-default btn-xs" %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  Нет услуг
+<% end %>
