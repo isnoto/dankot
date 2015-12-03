@@ -27,7 +27,6 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-nav'
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -44,4 +43,3 @@ group :development do
     gem 'capybara'
   end
 end
-
