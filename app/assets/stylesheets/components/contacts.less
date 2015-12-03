@@ -56,13 +56,18 @@
     textarea {
       display: block;
       padding: 8px 18px;
+      outline: none;
       color: #4d4d4d;
       width: 300px;
       border: 1px solid #ccc;
       border-radius: 5px;
       box-sizing: border-box;
       margin: 0 auto 20px;
+      line-height: 22px;
 
+      &:focus {
+        border-color: #999;
+      }
     }
 
     & textarea {
