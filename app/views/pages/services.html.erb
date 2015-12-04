@@ -7,7 +7,7 @@
         <div class="price__items">
           <% @services.each  do |service|%>
             <div class="price__item clear-fix">
-              <div class="price__name"><%= service.name %> <span class="price__desc">(<%= service.description %>)</span></div>
+              <div class="price__name"><%= service.name %> <span class="price__desc"><%= service.description %></span></div>
               <div class="price__value"><%= service.value %></div>
             </div>
           <% end %>
