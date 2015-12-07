@@ -20,7 +20,6 @@ gem 'less-rails-bootstrap'
 gem 'sorcery'
 gem 'masonry-rails'
 gem 'kaminari'
-gem 'passenger'
 
 group :development, :test do
   gem 'byebug'
