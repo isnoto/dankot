@@ -50,12 +50,16 @@
     }
   }
 
+  &__input-wrap {
+    position: relative;
+  }
+
   &__feedback {
 
     & input[type=text],
     textarea {
       display: block;
-      padding: 8px 18px;
+      padding: 8px 18px 7px;
       outline: none;
       color: #4d4d4d;
       width: 300px;
@@ -77,7 +81,7 @@
 
     & input[type=submit] {
       display: block;
-      padding: 11px 25px 10px;
+      padding: 12px 25px 9px;
       outline: none;
       border: none;
       margin: 0 auto;
@@ -92,6 +96,11 @@
         opacity: .8;
       }
     }
+  }
+
+  input:focus.parsley-error,
+  input.parsley-error {
+    border-color: red;
   }
 
   &__success-deliver {
@@ -117,6 +126,39 @@
     }
   }
 }
+
+.parsley-errors-list {
+  position: absolute;
+  top: 1px;
+  left: -220px;
+
+  & li {
+    display: block;
+    padding: 10px 20px 7px;
+    width: 220px;
+    background-color: #f96047;
+    border: 1px solid #f96047;
+    border-radius: 5px;
+    color: #fff;
+    font-family: @proLight;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      margin-top: -8px;
+      width: 0; height: 0;
+      border-left: 8px solid #f96047;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+  }
+}
+
 
 .shown {
   display: block;

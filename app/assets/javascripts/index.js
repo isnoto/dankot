@@ -335,13 +335,26 @@ function portfolio() {
   }
 }
 
+function validateForm() {
+  Parsley.addMessages('ru', {
+    defaultMessage: "Некорректное значение.",
+    required:       "Поле не может быть пустым"
+  });
+
+  $('#new_message').parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+  });
+
+  Parsley.setLocale('ru');
+}
+
 window.onload = function() {
   if (document.getElementById("gallery")) {
     var carousel = new Carousel({elem: document.getElementById("gallery")});
-  } else {
-    if (document.getElementById("gallery-inner")) {
+  } else if (document.getElementById("gallery-inner")) {
       portfolio();
       var gallery = new Gallery({elem: document.getElementById("gallery-inner")});
-    }
+  } else if (document.getElementById("new_message")) {
+    validateForm();
   }
 };
