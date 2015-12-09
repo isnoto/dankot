@@ -20,6 +20,8 @@ gem 'less-rails-bootstrap'
 gem 'sorcery'
 gem 'masonry-rails'
 gem 'kaminari'
+gem 'piet'
+gem 'piet-binary'
 
 group :development, :test do
   gem 'byebug'

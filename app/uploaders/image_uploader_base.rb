@@ -1,6 +1,7 @@
 class ImageUploaderBase < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
+  include Piet::CarrierWaveExtension
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -30,6 +31,7 @@ class ImageUploaderBase < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :thumb do
     process :create_thumb_version
+    process :optimize
   end
 
   def create_thumb_version

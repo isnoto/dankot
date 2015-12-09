@@ -1,10 +1,12 @@
 class PortfolioImageUploader < ImageUploaderBase
   version :portfolio do
     process :create_portfolio_version
+    process :optimize
   end
 
   version :zoom do
     process :create_zoom_version
+    process :optimize
   end
 
   def create_portfolio_version
