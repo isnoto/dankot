@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'less-rails'
 gem 'therubyracer'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'simple_form'
 gem 'less-rails-bootstrap'
 gem 'sorcery'

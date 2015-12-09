@@ -1,6 +1,6 @@
 class ImageUploaderBase < CarrierWave::Uploader::Base
 
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
   include Piet::CarrierWaveExtension
 
   # Choose what kind of storage to use for this uploader:
@@ -47,8 +47,8 @@ class ImageUploaderBase < CarrierWave::Uploader::Base
   private
 
   def dimensions
-    img = Magick::Image.read(current_path).first
-    { width: img.columns, height: img.rows }
+    img = MiniMagick::Image.open(current_path)
+    { width: img.width, height: img.height }
   end
 
   def landscape?
