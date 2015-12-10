@@ -25,9 +25,8 @@ class PortfolioController < ApplicationController
   def get_photos
     if photos_params[:category_id]
       PortfolioPhoto.where('category_id = ?', photos_params[:category_id])
-        .order("created_at DESC")
     else
-      PortfolioPhoto.all.order("created_at DESC")
+      PortfolioPhoto.all
     end
   end
 end
